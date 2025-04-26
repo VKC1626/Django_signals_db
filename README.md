@@ -1,3 +1,7 @@
+Question : By default do django signals run in the same database transaction as the caller? Please support your answer with a code snippet that conclusively proves your stance. The code does not need to be elegant and production ready, we just need to understand your logic.
+
+Answers :
+
 By default, Django signals like post_save run after the database transaction in memory, but not necessarily after the transaction is fully committed to the database.
 
 If you trigger a post_save signal, it runs right after .save() is called.
